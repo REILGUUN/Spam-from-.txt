@@ -1,1 +1,1 @@
-You пидор
+File compiling using g++ on windows 
