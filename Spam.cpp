@@ -11,7 +11,7 @@
 using namespace std;
 
 bool thread_finish = false;
-bool finish = false;
+bool finish = true;
 
 void Spam()
 {
@@ -47,9 +47,6 @@ void Spam()
         // Нажатие и отпускание Enter 
         keybd_event(VK_RETURN, 0, 0, 0);  // Key Down
         keybd_event(VK_RETURN, 0, KEYEVENTF_KEYUP, 0);  // Key Up
-
-        // Задержка между сообщениями
-        //Sleep(rand() % 5000 + 1000);
     }
     
 
@@ -63,7 +60,7 @@ void Spam()
 int main() {
 
     // Задержка перед отправкой первого сообщения
-        Sleep(10000);
+        //Sleep(2000);
     thread write(Spam);
     write.detach();
 

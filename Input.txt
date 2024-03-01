@@ -1,2 +1,4 @@
-Тут должен быть код
-There is text
+To stop code you need click Cntr + X
+Code full stop after click Cntr + C
+Code version is 1.1
+Input in this file nedeed text
