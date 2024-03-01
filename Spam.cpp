@@ -28,8 +28,6 @@ void Spam()
     while (getline(fin, str)) {
         wstring message = wstring(str.begin(), str.end()); // Преобразование из std::string в std::wstring
 
-        // Отправка сообщения
-     
         // Включение левого шифта
         keybd_event(VK_SHIFT, 0, 0, 0);  // Key Down
 
@@ -49,7 +47,6 @@ void Spam()
         keybd_event(VK_RETURN, 0, KEYEVENTF_KEYUP, 0);  // Key Up
     }
     
-
     // Закрытие файла
     fin.close();
     thread_finish = true;
@@ -58,9 +55,6 @@ void Spam()
 
 
 int main() {
-
-    // Задержка перед отправкой первого сообщения
-        //Sleep(2000);
     thread write(Spam);
     write.detach();
 
@@ -73,12 +67,8 @@ int main() {
         else if (GetKeyState('C') & 0x8000 & GetKeyState(VK_LCONTROL) & 0x8000 || thread_finish)
         {
             write.~thread();
-            break;
-        }
-        
-    }
-
- 
-    
+            return 0;
+        }     
+    }   
     return 0;
 }
